@@ -2,12 +2,9 @@
 
 from keras.preprocessing.image import ImageDataGenerator  
 
-def datagen():
+def datagen(training_path, test_path):
 
     ''' Function for loading the dataset using Image Data Generator '''
-
-    training_path = 'dataset/training_set'
-    test_path = 'dataset/test_set'
 
     train_datagen = ImageDataGenerator(validation_split=0.2, rescale = 1./255, shear_range = 0.2, zoom_range = 0.2, horizontal_flip = True )
 
