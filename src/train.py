@@ -8,6 +8,6 @@ def train(model, training_set, validation_set, batch_size = None, epochs, verbos
 
     model.compile(optimizer = 'Adam', loss = 'binary_crossentropy', metrics = ['Accuracy'])
     
-    model.fit(training_set, validation_data = validation_set, batch_size = batch_size,epochs = epochs, verbose = verbose)
+    model.fit(training_set, validation_data = validation_set, batch_size = batch_size, epochs = epochs, verbose = verbose)
 
     model.save('./models/model.h5')
