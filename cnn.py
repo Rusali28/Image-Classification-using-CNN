@@ -8,32 +8,30 @@ Original file is located at
 """
 
 import tensorflow as tf
-
+import numpy as np
+from matplotlib import pyplot as plt
+from keras.preprocessing import image
 from keras.preprocessing.image import ImageDataGenerator
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import Convolution2D, Dense, Flatten, MaxPooling2D
 
 train_datagen = ImageDataGenerator(rescale = 1./255, shear_range = 0.2, zoom_range = 0.2, horizontal_flip = True )
-
 test_datagen = ImageDataGenerator(rescale = 1./255)
 
-from google.colab import drive
-drive.mount("/content/gdrive")
+"""from google.colab import drive
+drive.mount("/content/gdrive")"""     ##Use this to mount your G-drive to use the dataset
 
-training_set = train_datagen.flow_from_directory('/content/gdrive/My Drive/dataset/training_set',
+training_set = train_datagen.flow_from_directory('dataset_CNN/training_set',
                                                  target_size = (64, 64),
-                                                 batch_size = 32,
+                                                 bach_size = 32,
                                                  class_mode = 'binary')
 
-training_set[1]
-
-test_set = test_datagen.flow_from_directory('/content/gdrive/My Drive/dataset/test_set',
+test_set = test_datagen.flow_from_directory('dataset_CNN/test_set',
                                             target_size = (64, 64),
                                             batch_size = 32,
                                             class_mode = 'binary')
 
-from tensorflow.keras.models import Sequential
-
-from tensorflow.keras.layers import Convolution2D, Dense, Flatten, MaxPooling2D
-
+##Model Building:-
 model = Sequential()
 model.add(Convolution2D(32,3,3, input_shape = (64,64,3), activation = 'relu'))
 model.add(MaxPooling2D(pool_size = (2,2)))
@@ -48,24 +46,20 @@ model.fit(x = training_set, validation_data = test_set, epochs = 20)
 
 # Commented out IPython magic to ensure Python compatibility.
 # %tensorflow_version 2.x
-import tensorflow as tf
+##Check if your pc has GPU. If not the model will work on CPU
 device_name = tf.test.gpu_device_name()
 if device_name != '/device:GPU:0':
   raise SystemError('GPU device not found')
 print('Found GPU at: {}'.format(device_name))
 
 history = model.fit(x = training_set, validation_data = test_set, epochs = 20)
-
 model.Dropout(0.2)
 
 # Commented out IPython magic to ensure Python compatibility.
 # %matplotlib inline
-from matplotlib import pyplot as plt
 
-plt.plot(history.history['loss'])
-
-"""Modified model with a second Convolutional Layer
-
+"""
+Modified model with a second Convolutional Layer
 """
 
 model = Sequential()
@@ -76,36 +70,20 @@ model.add(MaxPooling2D(pool_size = (2,2)))
 model.add(Flatten())
 model.add(Dense(units=128, activation='relu'))
 model.add(Dense(units=1, activation='sigmoid'))
-model.summary()
 
 model.compile(optimizer = 'adam', loss = 'binary_crossentropy', metrics = ['accuracy'])
 
 model.fit(x = training_set, validation_data = test_set, epochs = 20)
 
-import numpy as np
-
-from keras.preprocessing import image
-
-test_image = image.load_img('/content/gdrive/My Drive/dataset/single_prediction/cat_or_dog_1.jpg',target_size = (64, 64))
-
-test_image
-
+###Finally test your model
+test_image = image.load_img('dataset_CNN/single_prediction/cat_or_dog_1.jpg',target_size = (64, 64))
 test_image = image.img_to_array(test_image)
-
 test_image = np.expand_dims(test_image, axis =0)
-
 prediction = model.predict(test_image)
+#prediction
+#training_set.class_indices
 
-prediction
-
-training_set.class_indices
-
-if prediction[0][0] == 1:
+"""if prediction[0][0] == 1:
   predictions = 'dog'
 else:
-  predictions = 'cat'
-
-prediction
-
-predictions
-
+  predictions = 'cat'"""
