@@ -1,6 +1,7 @@
 import tensorflow as tf
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Convolution2D, Dense, Flatten, MaxPooling2D
+from tf.keras.activations import relu, sigmoid
 
 def model():
 
