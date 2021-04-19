@@ -5,7 +5,7 @@ from tensorflow.keras.layers import Convolution2D, Dense, Flatten, MaxPooling2D
 def model():
 
     ''' Defining the cnn model that performs the classification task.
-    The model has 2 conv2D Layers each followed by a MaxPooling2D. The Flatten layer follows before the forward pass and classification task performed by the Fully Connected Layers with ReLU and Sigmoid function respectively'''
+    The model has 2 conv2D Layers each followed by a MaxPooling2D. The Flatten layer follows before the forward pass and classification task performed by the Fully Connected Layers with ReLU and Sigmoid function respectively '''
     
     model = Sequential()
     model.add(Convolution2D(32,3,3, input_shape = (64,64,3), activation = 'relu'))
