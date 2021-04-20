@@ -19,4 +19,4 @@ training_set, validation_set, test_set = datagen(training_path, test_path)
 model = model()
 
 ''' training and savinf the model '''
-train(model, training_set, validation_set, 32, 50)
+train(model, 'model', training_set, validation_set, 32, 50)
