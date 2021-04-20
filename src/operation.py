@@ -16,7 +16,9 @@ test_path = 'dataset/test_set'
 training_set, validation_set, test_set = datagen(training_path, test_path)
 
 ''' defining the model architecture '''
+base_model = base_model()
 model = model()
 
 ''' training and savinf the model '''
-train(model, training_set, validation_set, 32, 50)
+train(base_model, 'base_model', training_set, validation_set, 32, 50)
+train(model, 'model', training_set, validation_set, 32, 50)

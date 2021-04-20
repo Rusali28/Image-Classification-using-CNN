@@ -16,7 +16,7 @@ def base_model():
     base_model.add(Dense(units=1, activation='sigmoid'))
     print(base_model.summary())
 
-    return base_model 
+    return base_model    
 
 def model():
 
