@@ -23,7 +23,7 @@ We use a [Dataset](https://drive.google.com/drive/u/0/folders/107Xj6pUqVRFFh4lYd
 
 - New Model:<br> The model has 2 conv2D Layers each followed by a MaxPooling2D. The Flatten layer follows before the forward pass and classification task performed by the Fully Connected Layers with ReLU and Sigmoid function respectively
 
-### Usage:
+### Guidelines to use the repo:
 - Cloning the Repository: 
 
         git clone https://github.com/Rusali28/Image-Classification-using-CNN
@@ -35,8 +35,19 @@ We use a [Dataset](https://drive.google.com/drive/u/0/folders/107Xj6pUqVRFFh4lYd
 - Setting up the Python Environment with dependencies:
 
         pip install -r requirements.txt
+        
+- Running the test file:
+        
+        python3 test.py
+        --img='path/to/image.jpeg' 
+        --model='path/to/base_model.h5' 
 
 ### Results:
 Our Model Predictions:<br />
 <img src="Images(Readme)/Unknown.png" alt="Images(Readme)/Unknown.png" width="200"/><br />
 <img src="Images(Readme)/result.png" alt="Images(Readme)/result.png" width="200"/>
+
+### Contributors 
+- [Rusali Saha](https://github.com/Rusali28)
+- [Saisha Shetty](https://github.com/SaishaShetty)
+- [Srijarko Roy](https://github.com/srijarkoroy)

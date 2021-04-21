@@ -3,7 +3,7 @@ import tensorflow as tf
 from keras.preprocessing import image
 import argparse
 
-def preprocess(img):
+def preprocess(img_path):
 
     ''' Preprocessing the image for prediction '''
 
