@@ -27,6 +27,8 @@ The model has 1 conv2D Layer followed by a MaxPooling2D. The Flatten layer follo
 The model has 2 conv2D Layers each followed by a MaxPooling2D. The Flatten layer follows before the forward pass and classification task performed by the Fully Connected Layers with ReLU and Sigmoid function respectively
 
  <img src = "Images(Readme)/model.png"> <img src = "Images(Readme)/model_loss.png">
+ 
+ <hr>
 
 ### Guidelines to use the repo:
 - Cloning the Repository: 
@@ -48,9 +50,12 @@ The model has 2 conv2D Layers each followed by a MaxPooling2D. The Flatten layer
         --model='path/to/base_model.h5' 
 
 ### Results:
-Our Model Predictions:<br />
+#### Our Model Predictions:<br>
 <img src="Images(Readme)/Unknown.png" alt="Images(Readme)/Unknown.png" width="200"/><br />
 <img src="Images(Readme)/result.png" alt="Images(Readme)/result.png" width="200"/>
+
+#### Comparison of accuracies of the models:<br>
+<img src="Images(Readme)/results.png">
 
 ### Contributors 
 - [Rusali Saha](https://github.com/Rusali28)
