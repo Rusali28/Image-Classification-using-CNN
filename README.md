@@ -17,11 +17,16 @@ We use a [Dataset](https://drive.google.com/drive/u/0/folders/107Xj6pUqVRFFh4lYd
 
 ### Model Components:
 
-<img src = "Images(Readme)/base_model.png"> <img src = "Images(Readme)/model.png">
 
-- Base Model:<br> The model has 1 conv2D Layer followed by a MaxPooling2D. The Flatten layer follows before the forward pass and classification task performed by the Fully Connected Layers with ReLU and Sigmoid function respectively
+- #### Base Model:
+The model has 1 conv2D Layer followed by a MaxPooling2D. The Flatten layer follows before the forward pass and classification task performed by the Fully Connected Layers with ReLU and Sigmoid function respectively
 
-- New Model:<br> The model has 2 conv2D Layers each followed by a MaxPooling2D. The Flatten layer follows before the forward pass and classification task performed by the Fully Connected Layers with ReLU and Sigmoid function respectively
+<img src = "Images(Readme)/base_model.png"> <img src = "Images(Readme)/base_model_loss.png">
+
+- #### New Model:
+The model has 2 conv2D Layers each followed by a MaxPooling2D. The Flatten layer follows before the forward pass and classification task performed by the Fully Connected Layers with ReLU and Sigmoid function respectively
+
+ <img src = "Images(Readme)/model.png"> <img src = "Images(Readme)/model_loss.png">
 
 ### Guidelines to use the repo:
 - Cloning the Repository: 
