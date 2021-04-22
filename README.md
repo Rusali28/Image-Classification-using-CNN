@@ -21,12 +21,12 @@ We use a [Dataset](https://drive.google.com/drive/u/0/folders/107Xj6pUqVRFFh4lYd
 - #### Base Model:
 The model has 1 conv2D Layer followed by a MaxPooling2D. The Flatten layer follows before the forward pass and classification task performed by the Fully Connected Layers with ReLU and Sigmoid function respectively
 
-<img src = "Images(Readme)/base_model.png"> <img src = "Images(Readme)/base_model_loss.png">
+<img src = "Images(Readme)/base_model.png" width="180"> <img src = "Images(Readme)/base_model_loss.png">
 
 - #### New Model:
 The model has 2 conv2D Layers each followed by a MaxPooling2D. The Flatten layer follows before the forward pass and classification task performed by the Fully Connected Layers with ReLU and Sigmoid function respectively
 
- <img src = "Images(Readme)/model.png"> <img src = "Images(Readme)/model_loss.png">
+ <img src = "Images(Readme)/model.png" width="170"> <img src = "Images(Readme)/model_loss.png">
  
  <hr>
 
